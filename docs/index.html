@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+            <span class="theme-toggle-text">mode</span>
+        </button>
+    </div>
     <div class="container">
         <header>
             <div class="terminal-window">
@@ -178,12 +183,35 @@
     </div>
 
     <script>
-        // Simple terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
+            // Simple terminal typing effect
             const cursor = document.querySelector('.blinking-cursor');
             setInterval(() => {
                 cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
             }, 500);
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            // Check for saved theme preference or use the system preference
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+            } else if (prefersDarkScheme.matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            
+            // Toggle theme when button is clicked
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'light' ? 'dark' : 'light';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
         });
     </script>
 </body>
