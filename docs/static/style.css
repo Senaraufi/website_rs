@@ -235,7 +235,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    align-items: flex-start;
+    align-items: stretch;
     margin-top: 20px;
     background-color: var(--terminal-bg);
 }
@@ -246,11 +246,12 @@ footer {
     margin: 0;
     background-color: var(--terminal-bg);
     border-color: #333;
+    padding: 0;
 }
 
 .about-text {
     flex: 1;
-    padding: 15px 0;
+    padding: 25px 0 0 0;
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--terminal-text);
@@ -264,19 +265,23 @@ footer {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .terminal-command-line {
     margin: 5px 0;
     line-height: 1.5;
+    text-align: left;
 }
 
 .about-terminal .ascii-art {
-    margin: 15px auto;
+    margin: 15px 0;
     font-size: 0.6rem;
     color: var(--terminal-green);
-    text-align: center;
+    text-align: left;
     display: block;
+    line-height: 1.2;
+    padding-left: 10px;
 }
 
 /* Make the layout responsive */
