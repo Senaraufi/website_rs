@@ -2,6 +2,7 @@
     /* Dark theme (default) */
     --terminal-bg: #0c0c0c;
     --terminal-green: #00ff00;
+    --terminal-green-rgb: 0, 255, 0;
     --terminal-blue: #0077ff;
     --terminal-text: #e0e0e0;
     --terminal-font: 'Courier New', monospace;
@@ -16,6 +17,7 @@
     /* Light theme */
     --terminal-bg: #f0f0f0;
     --terminal-green: #0066aa;
+    --terminal-green-rgb: 0, 102, 170;
     --terminal-blue: #3a86ff;
     --terminal-text: #2b2b2b;
     --body-bg: #e9ecef;
@@ -191,12 +193,73 @@ section {
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px var(--shadow-color);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
 }
 
-[data-theme="light"] .skill-badge:hover {
+.skill-badge:hover {
+    transform: translateY(-3px);
     border-color: var(--terminal-green);
-    box-shadow: 0 3px 8px var(--shadow-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
 }
+
+.skill-badge:active {
+    transform: translateY(0);
+    transition: transform 0.1s;
+}
+
+/* Add a subtle glow effect on hover */
+.skill-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(var(--terminal-green-rgb, 0, 255, 0), 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.skill-badge:hover::after {
+    transform: translateX(100%);
+}
+
+/* Animation for skills when they appear */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills-container .skill-badge {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Stagger the animations */
+.skills-container .skill-badge:nth-child(1) { animation-delay: 0.1s; }
+.skills-container .skill-badge:nth-child(2) { animation-delay: 0.15s; }
+.skills-container .skill-badge:nth-child(3) { animation-delay: 0.2s; }
+.skills-container .skill-badge:nth-child(4) { animation-delay: 0.25s; }
+.skills-container .skill-badge:nth-child(5) { animation-delay: 0.3s; }
+.skills-container .skill-badge:nth-child(6) { animation-delay: 0.35s; }
+.skills-container .skill-badge:nth-child(7) { animation-delay: 0.4s; }
+.skills-container .skill-badge:nth-child(8) { animation-delay: 0.45s; }
+.skills-container .skill-badge:nth-child(9) { animation-delay: 0.5s; }
+.skills-container .skill-badge:nth-child(10) { animation-delay: 0.55s; }
+.skills-container .skill-badge:nth-child(11) { animation-delay: 0.6s; }
+.skills-container .skill-badge:nth-child(12) { animation-delay: 0.65s; }
+.skills-container .skill-badge:nth-child(13) { animation-delay: 0.7s; }
+.skills-container .skill-badge:nth-child(14) { animation-delay: 0.75s; }
+.skills-container .skill-badge:nth-child(15) { animation-delay: 0.8s; }
 
 .projects {
     display: grid;
