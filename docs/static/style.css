@@ -31,6 +31,7 @@ header {
 .terminal-prompt {
     color: var(--terminal-green);
     font-weight: bold;
+    display: inline-block;
 }
 
 .terminal-command {
@@ -227,6 +228,68 @@ footer {
     padding: 15px;
     margin: 20px 0;
     overflow-x: auto;
+}
+
+/* New styles for the about section layout */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 20px;
+    background-color: var(--terminal-bg);
+}
+
+.about-terminal {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin: 0;
+    background-color: var(--terminal-bg);
+    border-color: #333;
+}
+
+.about-text {
+    flex: 1;
+    padding: 15px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--terminal-text);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-terminal .terminal-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-command-line {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.about-terminal .ascii-art {
+    margin: 15px auto;
+    font-size: 0.6rem;
+    color: var(--terminal-green);
+    text-align: center;
+    display: block;
+}
+
+/* Make the layout responsive */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-terminal {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .terminal-header {
