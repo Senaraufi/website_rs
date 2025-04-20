@@ -205,18 +205,52 @@ section {
     margin-top: 20px;
 }
 
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
 .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.project-card:hover {
+.project-card-link:hover .project-card {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--shadow-color);
     border-color: var(--terminal-green);
+}
+
+.github-link {
+    margin-top: auto;
+    padding-top: 15px;
+    text-align: right;
+    color: var(--terminal-green);
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-link:hover .github-link {
+    opacity: 1;
+}
+
+.github-link i {
+    margin-left: 8px;
+    font-size: 1.1rem;
 }
 
 .project-title {
