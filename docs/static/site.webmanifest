@@ -1,0 +1,14 @@
+{
+  "name": "Sena Raufi",
+  "short_name": "SR",
+  "icons": [
+    {
+      "src": "./terminal-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#0c0c0c",
+  "background_color": "#0c0c0c",
+  "display": "standalone"
+}
