@@ -6,24 +6,10 @@
     <link rel="stylesheet" href="./static/style.css">
     <title>Sena Raufi - Cybersecurity Student & Developer</title>
     
-    <!-- Favicon references -->
-    <link rel="icon" href="./static/terminal-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./static/terminal-icon.svg">
-    <link rel="manifest" href="./static/site.webmanifest">
-    <meta name="theme-color" content="#0c0c0c">
-    
     <!-- Add link to Google Fonts for Source Code Pro and Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Add Font Awesome for GitHub icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="theme-toggle-container">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
-            <span class="theme-toggle-text">mode</span>
-        </button>
-    </div>
     <div class="container">
         <header>
             <div class="terminal-window">
@@ -36,7 +22,7 @@
                     <!--<span class="terminal-prompt">user@cybersec:~$</span>-->
                     <span class="terminal-command"></span><br>
                     <h1 class="typewriter-text">Sena Raufi</h1>
-                    <p>Digital Forensics and Cybersecurity Student at Technological University Dublin, TU863/Y2</p>
+                    <p>Digital Forensics and Cybersecurity Student at Technological University Dublin, TU863/Y3</p>
                     <p>2023-2027</p>
                     <!--<span class="terminal-prompt">user@cybersec:~$</span> 
                         <span class="blinking-cursor">█</span>-->
@@ -46,34 +32,24 @@
         
         <section id="about">
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat about.txt</h2>
-            <div class="about-container">
-                <div class="about-terminal terminal-window">
-                    <div class="terminal-content">
-                        <div class="terminal-command-line">
-                            <span class="terminal-prompt">sena@cybersec:~$</span> cat terminal.txt
-                        </div>
-                        <div class="ascii-art">
-                            ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
-                            ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
-                            ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
-                            ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░
-                            ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██░   ▓██░ ▓█   ▓██▒░██████▒
-                            ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░
-                            ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░ ▒ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░ ▒  ░
-                            ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
-                            ░  ░   ░            ░    ░           ░       ░  ░    ░  ░
-                        </div>
-                        <div class="terminal-command-line">
-                            <span class="terminal-prompt">sena@cybersec:~$</span> <span class="blinking-cursor">█</span>
-                        </div>
-                    </div>
+            <div class="terminal-window">
+                <div class="terminal-content">
+                <div class="ascii-art">
+                    ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
+                    ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
+                    ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
+                    ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░
+                      ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██░   ▓██░ ▓█   ▓██▒░██████▒
+                      ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░
+                        ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░ ▒ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░ ▒  ░
+                      ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
+                                ░  ░   ░            ░    ░           ░       ░  ░    ░  ░
                 </div>
-                <div class="about-text">
-                    <p>As a second-year Digital Forensics and Cyber Security student at TU Dublin, I am building a strong foundation in computer science, networking, and software development. My academic journey has equipped me with practical skills in network security, Java programming, web development, and interactive multimedia development using Unity.</p>
+                    <p>I'm a cybersecurity student with a focus on digital forensics and penetration testing. My journey in cybersecurity began when I discovered a vulnerability in my school's network and responsibly reported it.</p>
                     
-                    <!--<p>My approach to security combines deep technical knowledge with an understanding of human behavior and system design. I believe the best security professionals think like attackers but act with the ethics of defenders.</p>
+                    <p>My approach to security combines deep technical knowledge with an understanding of human behavior and system design. I believe the best security professionals think like attackers but act with the ethics of defenders.</p>
                     
-                    <p>Currently pursuing a Bachelor's degree in Cybersecurity, I spend my free time participating in CTF competitions, contributing to open-source security tools, and researching emerging threats.</p>-->
+                    <p>Currently pursuing a Bachelor's degree in Cybersecurity, I spend my free time participating in CTF competitions, contributing to open-source security tools, and researching emerging threats.</p>
                 </div>
             </div>
         </section>
@@ -81,68 +57,60 @@
         <section id="skills">
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> ls -la skills/</h2>
             <div class="skills-container">
-                <div class="skill-badge">Network Security & Architecture</div>
+                <div class="skill-badge">Network Security</div>
                 <div class="skill-badge">Digital Forensics</div>
-                <div class="skill-badge">Java Programming</div>
-                <div class="skill-badge">Software Development</div>
-                <div class="skill-badge">Web Development</div>
-                <div class="skill-badge">Database Management</div>
+                <div class="skill-badge">Penetration Testing</div>
+                <div class="skill-badge">Linux Administration</div>
+                <div class="skill-badge">Malware Analysis</div>
                 <div class="skill-badge">Python</div>
                 <div class="skill-badge">Bash Scripting</div>
-                <div class="skill-badge">LAN Switching and Wireless</div>
-                <div class="skill-badge">Software Engineering and Testing</div>
+                <div class="skill-badge">Wireshark</div>
+                <div class="skill-badge">Metasploit</div>
                 <div class="skill-badge">Kali Linux</div>
-                <div class="skill-badge">Computer Architecture</div>
-                <div class="skill-badge">Operating Systems</div>
-                <div class="skill-badge">Database Systems</div>
+                <div class="skill-badge">OSINT</div>
+                <div class="skill-badge">Vulnerability Assessment</div>
+                <div class="skill-badge">Incident Response</div>
+                <div class="skill-badge">Web Application Security</div>
             </div>
         </section>
         
         <section id="projects">
             <h2><span class="terminal-prompt">user@cybersec:~$</span> find ./projects -type f -name "*.md" | sort</h2>
             <div class="projects">
-                <a href="https://github.com/Senaraufi/Team24" class="project-card-link">
-                    <div class="project-card">
-                        <h3 class="project-title">Emergency Response System</h3>
-                        <p class="project-description">A web app developed during Hack Ireland hackathon, a response system based on online consulting. Based on the severity an ambulance gets automatically called.</p>
-                        <div class="project-tools">
-                            <span class="project-tool">React</span>
-                            <span class="project-tool">Flasc</span>
-                            <span class="project-tool">Automation</span>
-                            <span class="project-tool">Python</span>
-                        </div>
-                        <div class="github-link">View on GitHub <i class="fab fa-github"></i></div>
+                <div class="project-card">
+                    <h3 class="project-title">Emergency Response System</h3>
+                    <p class="project-description">A web app developed during Hack Ireland hackathon, a response system based on online consulting. Based on the severity an ambulance gets automatically called.</p>
+                    <div class="project-tools">
+                        <span class="project-tool">React</span>
+                        <span class="project-tool">Flasc</span>
+                        <span class="project-tool">Automation</span>
+                        <span class="project-tool">Python</span>
                     </div>
-                </a>
+                </div>
                 
-                <a href="https://github.com/Senaraufi/SofwareEngineering-Project" class="project-card-link">
-                    <div class="project-card">
-                        <h3 class="project-title">TalkTempo</h3>
-                        <p class="project-description">Website developed for Software Engineering and Testing. A website inspired by Letterboxd but for music.</p>
-                        <div class="project-tools">
-                            <span class="project-tool">Java OOP</span>
-                            <span class="project-tool">PHP</span>
-                            <span class="project-tool">HTML</span>
-                            <span class="project-tool">CSS</span>
-                            <span class="project-tool">PHP Unit</span>
-                        </div>
-                        <div class="github-link">View on GitHub <i class="fab fa-github"></i></div>
+                <div class="project-card">
+                    <h3 class="project-title">TalkTempo</h3>
+                    <p class="project-description">Website developed for Software Engineering and Testing. A website inspired by Letterboxd but for music.</p>
+                    <div class="project-tools">
+                        <span class="project-tool">Java OOP</span>
+                        <span class="project-tool">PHP</span>
+                        <span class="project-tool">HTML</span>
+                        <span class="project-tool">CSS</span>
+                        <span class="project-tool">PHP Unit</span>
+
                     </div>
-                </a>
+                </div>
                 
-                <a href="https://github.com/Senaraufi/CSppHacakthon" class="project-card-link">
-                    <div class="project-card">
-                        <h3 class="project-title">Every Last Bite</h3>
-                        <p class="project-description">Web App developed during the CS++ Workday hackathon.Helps customers find recipes that they can make based on their ingredients avaialble and their dietary requirements. </p>
-                        <div class="project-tools">
-                            <span class="project-tool">React</span>
-                            <span class="project-tool">Flask</span>
-                            <span class="project-tool">Python</span>
-                            <span class="project-tool">JavaScript</span>
-                        </div>
-                        <div class="github-link">View on GitHub <i class="fab fa-github"></i></div>
+                <div class="project-card">
+                    <h3 class="project-title">Every Last Bite</h3>
+                    <p class="project-description">Web App developed during the CS++ Workday hackathon.Helps customers find recipes that they can make based on their ingredients avaialble and their dietary requirements. </p>
+                    <div class="project-tools">
+                        <span class="project-tool">React</span>
+                        <span class="project-tool">Flask</span>
+                        <span class="project-tool">Python</span>
+                        <span class="project-tool">JavaScript</span>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
         
@@ -199,35 +167,12 @@
     </div>
 
     <script>
+        // Simple terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
-            // Simple terminal typing effect
             const cursor = document.querySelector('.blinking-cursor');
             setInterval(() => {
                 cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
             }, 500);
-            
-            // Theme toggle functionality
-            const themeToggle = document.getElementById('theme-toggle');
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-            
-            // Check for saved theme preference or use the system preference
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme) {
-                document.documentElement.setAttribute('data-theme', currentTheme);
-            } else if (prefersDarkScheme.matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-            
-            // Toggle theme when button is clicked
-            themeToggle.addEventListener('click', function() {
-                let theme = document.documentElement.getAttribute('data-theme');
-                let newTheme = theme === 'light' ? 'dark' : 'light';
-                
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            });
         });
     </script>
 </body>
