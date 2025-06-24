@@ -339,10 +339,23 @@
                 // Automatically apply digital rain effect on page load
                 setTimeout(() => {
                     applyAsciiEffect('rain');
+                    console.log('Digital rain effect applied');
                 }, 500);
                 
                 // Add click event for ripple effect
                 asciiArt.addEventListener('click', createRippleFromClick);
+            }
+            
+            // Ensure the animation runs even if the DOMContentLoaded event has already fired
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setTimeout(() => {
+                    const asciiArt = document.getElementById('interactive-ascii');
+                    if (asciiArt && !asciiArt.querySelector('.ascii-char')) {
+                        console.log('Initializing ASCII art again');
+                        initializeInteractiveAscii();
+                        setTimeout(() => applyAsciiEffect('rain'), 100);
+                    }
+                }, 100);
             }
             
             function initializeInteractiveAscii() {
