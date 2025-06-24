@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Sena Raufi - Cybersecurity Student & Developer</title>
     
     <!-- Add link to Google Fonts for Source Code Pro and Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for GitHub icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Theme toggle button -->
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-toggle-btn">
+            <span class="theme-toggle-text">Toggle Theme</span>
+        </button>
+    </div>
+    
     <div class="container">
         <header>
             <div class="terminal-window">
@@ -32,24 +41,28 @@
         
         <section id="about">
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat about.txt</h2>
-            <div class="terminal-window">
-                <div class="terminal-content">
-                <div class="ascii-art">
-                    ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
-                    ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
-                    ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
-                    ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░
-                      ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██░   ▓██░ ▓█   ▓██▒░██████▒
-                      ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░
+            <div class="about-section-container">
+                <div class="terminal-window ascii-container">
+                    <div class="ascii-art">
+                        ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
+                        ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
+                        ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
+                        ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░
+                        ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██░   ▓██░ ▓█   ▓██▒░██████▒
+                        ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░
                         ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░ ▒ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░ ▒  ░
-                      ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
+                        ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
                                 ░  ░   ░            ░    ░           ░       ░  ░    ░  ░
+                    </div>
                 </div>
-                    <p>I'm a cybersecurity student with a focus on digital forensics and penetration testing. My journey in cybersecurity began when I discovered a vulnerability in my school's network and responsibly reported it.</p>
-                    
-                    <p>My approach to security combines deep technical knowledge with an understanding of human behavior and system design. I believe the best security professionals think like attackers but act with the ethics of defenders.</p>
-                    
-                    <p>Currently pursuing a Bachelor's degree in Cybersecurity, I spend my free time participating in CTF competitions, contributing to open-source security tools, and researching emerging threats.</p>
+                <div class="terminal-window about-text">
+                    <div class="terminal-content">
+                        <p>I'm a third year student with a focus on digital forensics and cybersecurity. I am currently pursuing a Bachelor's degree in Cybersecurity at Technological University Dublin, TU863</p>
+                        
+                        <p>I am building a strong foundation in computer science, networking, and software development. My academic journey has equipped me with practical skills in network security, Java programming, web development, and interactive multimedia development using Unity.</p>
+                        
+                        <p>I spend my free time participating in CTF competitions, contributing to open-source security tools, and researching emerging threats.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -58,72 +71,115 @@
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> ls -la skills/</h2>
             <div class="skills-container">
                 <div class="skill-badge">Network Security</div>
-                <div class="skill-badge">Digital Forensics</div>
+                <div class="skill-badge">LAN/WAN technologies</div>
                 <div class="skill-badge">Penetration Testing</div>
-                <div class="skill-badge">Linux Administration</div>
-                <div class="skill-badge">Malware Analysis</div>
+                <div class="skill-badge">Algorithmic Problem Solving</div>
+                <div class="skill-badge">Software Engineering and Testing</div>
+                <div class="skill-badge">Java OOP</div>
                 <div class="skill-badge">Python</div>
                 <div class="skill-badge">Bash Scripting</div>
-                <div class="skill-badge">Wireshark</div>
-                <div class="skill-badge">Metasploit</div>
+                <div class="skill-badge">Cryptography</div>
+                <div class="skill-badge">Web Exploitation</div>
+                <div class="skill-badge">Web Development</div>
                 <div class="skill-badge">Kali Linux</div>
                 <div class="skill-badge">OSINT</div>
-                <div class="skill-badge">Vulnerability Assessment</div>
-                <div class="skill-badge">Incident Response</div>
-                <div class="skill-badge">Web Application Security</div>
+                <div class="skill-badge">Reverse Engineering</div>
+                <div class="skill-badge">Rust</div>
+                <div class="skill-badge">Unity Game Development</div>
             </div>
         </section>
         
         <section id="projects">
             <h2><span class="terminal-prompt">user@cybersec:~$</span> find ./projects -type f -name "*.md" | sort</h2>
             <div class="projects">
-                <div class="project-card">
-                    <h3 class="project-title">Emergency Response System</h3>
-                    <p class="project-description">A web app developed during Hack Ireland hackathon, a response system based on online consulting. Based on the severity an ambulance gets automatically called.</p>
-                    <div class="project-tools">
-                        <span class="project-tool">React</span>
-                        <span class="project-tool">Flasc</span>
-                        <span class="project-tool">Automation</span>
-                        <span class="project-tool">Python</span>
+                <a href="https://github.com/Senaraufi/EmergencyResponseSystem" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">Emergency Response System</h3>
+                        <p class="project-description">A web app developed during Hack Ireland hackathon, a response system based on online consulting. Based on the severity an ambulance gets automatically called.</p>
+                        <div class="project-tools">
+                            <span class="project-tool">React</span>
+                            <span class="project-tool">Flasc</span>
+                            <span class="project-tool">Automation</span>
+                            <span class="project-tool">Python</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
-                    <h3 class="project-title">TalkTempo</h3>
-                    <p class="project-description">Website developed for Software Engineering and Testing. A website inspired by Letterboxd but for music.</p>
-                    <div class="project-tools">
-                        <span class="project-tool">Java OOP</span>
-                        <span class="project-tool">PHP</span>
-                        <span class="project-tool">HTML</span>
-                        <span class="project-tool">CSS</span>
-                        <span class="project-tool">PHP Unit</span>
-
+                <a href="https://github.com/Senaraufi/TalkTempo" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">TalkTempo</h3>
+                        <p class="project-description">Website developed for Software Engineering and Testing. A website inspired by Letterboxd but for music.</p>
+                        <div class="project-tools">
+                            <span class="project-tool">Java OOP</span>
+                            <span class="project-tool">PHP</span>
+                            <span class="project-tool">HTML</span>
+                            <span class="project-tool">CSS</span>
+                            <span class="project-tool">PHP Unit</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
-                    <h3 class="project-title">Every Last Bite</h3>
-                    <p class="project-description">Web App developed during the CS++ Workday hackathon.Helps customers find recipes that they can make based on their ingredients avaialble and their dietary requirements. </p>
-                    <div class="project-tools">
-                        <span class="project-tool">React</span>
-                        <span class="project-tool">Flask</span>
-                        <span class="project-tool">Python</span>
-                        <span class="project-tool">JavaScript</span>
+                <a href="https://github.com/Senaraufi/EveryLastBite" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">Every Last Bite</h3>
+                        <p class="project-description">Web App developed during the CS++ Workday hackathon.Helps customers find recipes that they can make based on their ingredients avaialble and their dietary requirements. </p>
+                        <div class="project-tools">
+                            <span class="project-tool">React</span>
+                            <span class="project-tool">Flask</span>
+                            <span class="project-tool">Python</span>
+                            <span class="project-tool">JavaScript</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
         
         <section id="certifications">
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat ./certifications/list.txt</h2>
-            <div class="terminal-window">
-                <div class="terminal-content">
-                    <ul>
-                        <li>Fundamentals of Deep Learning by Nvidia <a href="https://learn.nvidia.com/certificates?id=AadpNUlyRqKnZvWLw6TpAw" class="terminal-prompt"> ./Credentials</a></li>
-                        <li>Junior Programmer by Unity <a href="https://learn.unity.com/u/66eb2170edbc2a0a9a8b923c" class="terminal-prompt"> ./Credentials</a></li>
-                        <li>Java Fundamentals by Coddy <a href="https://coddy.tech/certifications/OuAFTX-cpiHhr" class="terminal-prompt"> ./Credentials</a></li>
-                        <li>Symfony Casts PHP level 1,2,3 <a href="https://symfonycasts.com/certificates/FC55FD14AC49" class="terminal-prompt"> ./Credentials</a></li>
-                    </ul>
+            <div class="certifications-table">
+                <div class="cert-row">
+                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <div class="cert-name">Fundamentals of Deep Learning</div>
+                    <div class="cert-issuer">Nvidia</div>
+                    <div class="cert-action">
+                        <a href="https://learn.nvidia.com/certificates?id=AadpNUlyRqKnZvWLw6TpAw" class="cert-link">View <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="cert-row">
+                    <div class="cert-icon"><i class="fas fa-gamepad"></i></div>
+                    <div class="cert-name">Junior Programmer</div>
+                    <div class="cert-issuer">Unity</div>
+                    <div class="cert-action">
+                        <a href="https://learn.unity.com/u/66eb2170edbc2a0a9a8b923c" class="cert-link">View <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="cert-row">
+                    <div class="cert-icon"><i class="fab fa-java"></i></div>
+                    <div class="cert-name">Java Fundamentals</div>
+                    <div class="cert-issuer">Coddy</div>
+                    <div class="cert-action">
+                        <a href="https://coddy.tech/certifications/OuAFTX-cpiHhr" class="cert-link">View <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="cert-row">
+                    <div class="cert-icon"><i class="fab fa-php"></i></div>
+                    <div class="cert-name">PHP Level 1,2,3</div>
+                    <div class="cert-issuer">Symfony Casts</div>
+                    <div class="cert-action">
+                        <a href="https://symfonycasts.com/certificates/3a1e2b5c7d" class="cert-link">View <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -149,11 +205,36 @@
         
         <footer>
             <div class="social-links">
-                <a href="https://github.com/Senaraufi" class="social-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/sena-raufi-610187293/" class="social-link">LinkedIn</a>
-                <a href="https://ctf.cybersecuritychallenge.ie/user" class="social-link">ZeroDays</a>
-                <a href="https://play.picoctf.org/users/sena24" class="social-link">PicoCTF</a>
-                <a href="mailto:senaraufi@gmail.com" class="social-link">Mail</a>
+                <a href="https://github.com/Senaraufi" class="social-link" aria-label="GitHub">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sena-raufi-610187293/" class="social-link" aria-label="LinkedIn">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://ctf.cybersecuritychallenge.ie/user" class="social-link" aria-label="ZeroDays">
+                    <div class="social-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <span>ZeroDays</span>
+                </a>
+                <a href="https://play.picoctf.org/users/sena24" class="social-link" aria-label="PicoCTF">
+                    <div class="social-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <span>PicoCTF</span>
+                </a>
+                <a href="mailto:senaraufi@gmail.com" class="social-link" aria-label="Email">
+                    <div class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span>Mail</span>
+                </a>
             </div>
             <div class="terminal-window">
                 <div class="terminal-content">
@@ -170,9 +251,34 @@
         // Simple terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
             const cursor = document.querySelector('.blinking-cursor');
-            setInterval(() => {
-                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-            }, 500);
+            if (cursor) {
+                setInterval(() => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                }, 500);
+            }
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleText = document.querySelector('.theme-toggle-text');
+            
+            // Check for saved theme preference or use default
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.body.setAttribute('data-theme', savedTheme);
+            updateToggleText(savedTheme);
+            
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateToggleText(newTheme);
+            });
+            
+            function updateToggleText(theme) {
+                themeToggleText.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+            }
         });
     </script>
 </body>
