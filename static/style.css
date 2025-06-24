@@ -627,11 +627,66 @@ footer {
     transform: scale(0.9);
     margin: 0;
     animation: fadeIn 1s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+/* Interactive ASCII Art */
+#interactive-ascii {
+    position: relative;
+}
+
+#interactive-ascii .ascii-char {
+    display: inline-block;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+#interactive-ascii .ascii-char:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(var(--terminal-green-rgb), 1);
+}
+
+#interactive-ascii .ascii-char.highlight {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(var(--terminal-green-rgb), 1), 0 0 20px rgba(var(--terminal-green-rgb), 0.8);
+}
+
+#interactive-ascii .ascii-char.matrix {
+    animation: matrixEffect 2s infinite;
+}
+
+#interactive-ascii .ascii-char.ripple {
+    animation: rippleEffect 1s;
+}
+
+#interactive-ascii .ascii-char.rain {
+    animation: rainEffect 3s infinite;
+    animation-delay: calc(var(--delay) * 100ms);
+}
+
+/* ASCII Art Animation */
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes matrixEffect {
+    0% { color: var(--terminal-green); text-shadow: 0 0 5px rgba(var(--terminal-green-rgb), 0.7); }
+    50% { color: #ffffff; text-shadow: 0 0 10px rgba(var(--terminal-green-rgb), 1); }
+    100% { color: var(--terminal-green); text-shadow: 0 0 5px rgba(var(--terminal-green-rgb), 0.7); }
+}
+
+@keyframes rippleEffect {
+    0% { transform: scale(1); color: var(--terminal-green); }
+    50% { transform: scale(1.5); color: #ffffff; text-shadow: 0 0 15px rgba(var(--terminal-green-rgb), 1); }
+    100% { transform: scale(1); color: var(--terminal-green); }
+}
+
+@keyframes rainEffect {
+    0% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.3; transform: translateY(10px); color: #ffffff; }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Skill badge hover effect */

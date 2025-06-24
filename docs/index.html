@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/style.css">
     <title>Sena Raufi - Cybersecurity Student & Developer</title>
+    <link rel="icon" href="../static/images/favicon.svg" type="image/svg+xml">
     
     <!-- Add link to Google Fonts for Source Code Pro and Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -61,7 +62,17 @@
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat about.txt</h2>
             <div class="about-section-container">
                 <div class="terminal-window ascii-container">
-                    <div class="ascii-art">
+                    <div class="ascii-art" id="interactive-ascii" data-original="
+                        ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
+                        ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
+                        ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
+                        ░ ▓██▓ ░ ▒▓█  ▄ ▒██▀▀█▄  ▒██    ▒██ ░██░▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░
+                        ▒██▒ ░ ░▒████▒░██▓ ▒██▒▒██▒   ░██▒░██░▒██░   ▓██░ ▓█   ▓██▒░██████▒
+                        ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ░  ░░▓  ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░
+                        ░     ░ ░  ░  ░▒ ░ ▒░░  ░      ░ ▒ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░ ▒  ░
+                        ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
+                                ░  ░   ░            ░    ░           ░       ░  ░    ░  ░
+                    ">
                         ▄▄▄█████▓▓█████  ██▀███   ███▄ ▄███▓ ██▓ ███▄    █  ▄▄▄       ██▓
                         ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █ ▒████▄    ▓██▒
                         ▒ ▓██░ ▒░▒███   ▓██ ░▄█ ▒▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░
@@ -72,6 +83,7 @@
                         ░         ░     ░░   ░ ░      ░    ▒ ░   ░   ░ ░   ░   ▒     ░ ░
                                 ░  ░   ░            ░    ░           ░       ░  ░    ░  ░
                     </div>
+
                 </div>
                 <div class="terminal-window about-text">
                     <div class="terminal-content">
@@ -165,7 +177,7 @@
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat ./certifications/list.txt</h2>
             <div class="certifications-table">
                 <div class="cert-row">
-                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <div class="cert-icon"><img src="../static/images/nvidia-logo.svg" alt="Nvidia Logo" width="24" height="24"></div>
                     <div class="cert-name">Fundamentals of Deep Learning</div>
                     <div class="cert-issuer">Nvidia</div>
                     <div class="cert-action">
@@ -174,7 +186,7 @@
                 </div>
                 
                 <div class="cert-row">
-                    <div class="cert-icon"><i class="fas fa-gamepad"></i></div>
+                    <div class="cert-icon"><img src="../static/images/unity-logo.svg" alt="Unity Logo" width="24" height="24"></div>
                     <div class="cert-name">Junior Programmer</div>
                     <div class="cert-issuer">Unity</div>
                     <div class="cert-action">
@@ -315,6 +327,131 @@
                         navbarToggle.classList.remove('active');
                         navbarLinks.classList.remove('active');
                     });
+                });
+            }
+            
+            // Interactive ASCII Art functionality
+            const asciiArt = document.getElementById('interactive-ascii');
+            if (asciiArt) {
+                // Convert ASCII art to individual characters
+                initializeInteractiveAscii();
+                
+                // Automatically apply digital rain effect on page load
+                setTimeout(() => {
+                    applyAsciiEffect('rain');
+                }, 500);
+                
+                // Add click event for ripple effect
+                asciiArt.addEventListener('click', createRippleFromClick);
+            }
+            
+            function initializeInteractiveAscii() {
+                const asciiArt = document.getElementById('interactive-ascii');
+                if (!asciiArt) return;
+                
+                // Store original content for reset
+                asciiArt.setAttribute('data-original', asciiArt.innerHTML);
+                
+                // Split content into individual spans for character manipulation
+                let content = asciiArt.innerHTML;
+                let newContent = '';
+                
+                // Process each line
+                const lines = content.split('\n');
+                lines.forEach((line, lineIndex) => {
+                    for (let i = 0; i < line.length; i++) {
+                        const char = line[i];
+                        if (char === ' ') {
+                            newContent += ' ';
+                        } else {
+                            newContent += `<span class="ascii-char" data-x="${i}" data-y="${lineIndex}">${char}</span>`;
+                        }
+                    }
+                    if (lineIndex < lines.length - 1) {
+                        newContent += '\n';
+                    }
+                });
+                
+                asciiArt.innerHTML = newContent;
+            }
+            
+            function applyAsciiEffect(effectType) {
+                resetAsciiArt();
+                const chars = document.querySelectorAll('#interactive-ascii .ascii-char');
+                
+                if (effectType === 'matrix') {
+                    chars.forEach(char => {
+                        char.classList.add('matrix');
+                    });
+                } else if (effectType === 'rain') {
+                    chars.forEach(char => {
+                        const delay = Math.floor(Math.random() * 20);
+                        char.style.setProperty('--delay', delay);
+                        char.classList.add('rain');
+                    });
+                } else if (effectType === 'ripple') {
+                    // Create a central ripple
+                    const centerX = Math.floor(chars.length / 2);
+                    createRipple(centerX, 5);
+                }
+            }
+            
+            function createRippleFromClick(event) {
+                // Get click position relative to ASCII art
+                const rect = event.currentTarget.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                
+                // Find closest character to click
+                const chars = document.querySelectorAll('#interactive-ascii .ascii-char');
+                let closestChar = null;
+                let minDistance = Infinity;
+                
+                chars.forEach(char => {
+                    const charRect = char.getBoundingClientRect();
+                    const charX = charRect.left + charRect.width/2 - rect.left;
+                    const charY = charRect.top + charRect.height/2 - rect.top;
+                    
+                    const distance = Math.sqrt(Math.pow(charX - x, 2) + Math.pow(charY - y, 2));
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestChar = char;
+                    }
+                });
+                
+                if (closestChar) {
+                    const dataX = parseInt(closestChar.getAttribute('data-x'));
+                    const dataY = parseInt(closestChar.getAttribute('data-y'));
+                    createRipple(dataX, dataY);
+                }
+            }
+            
+            function createRipple(centerX, centerY) {
+                const chars = document.querySelectorAll('#interactive-ascii .ascii-char');
+                chars.forEach(char => {
+                    const x = parseInt(char.getAttribute('data-x'));
+                    const y = parseInt(char.getAttribute('data-y'));
+                    
+                    const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+                    const delay = Math.floor(distance * 100);
+                    
+                    setTimeout(() => {
+                        char.classList.add('ripple');
+                        setTimeout(() => {
+                            char.classList.remove('ripple');
+                        }, 1000);
+                    }, delay);
+                });
+            }
+            
+            function resetAsciiArt() {
+                const asciiArt = document.getElementById('interactive-ascii');
+                if (!asciiArt) return;
+                
+                const chars = document.querySelectorAll('#interactive-ascii .ascii-char');
+                chars.forEach(char => {
+                    char.classList.remove('matrix', 'ripple', 'rain', 'highlight');
+                    char.style.removeProperty('--delay');
                 });
             }
         });
