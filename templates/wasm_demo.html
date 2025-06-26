@@ -1,0 +1,61 @@
+{% extends "base_template.html" %}
+
+{% block title %}WebAssembly Demo - Rust Power{% endblock %}
+
+{% block content %}
+<section id="wasm-demo">
+    <h2><span class="terminal-prompt">sena@cybersec:~$</span> ./run_wasm_demo.sh</h2>
+    
+    <div class="wasm-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-button terminal-close"></span>
+                <span class="terminal-button terminal-minimize"></span>
+                <span class="terminal-button terminal-maximize"></span>
+            </div>
+            <div class="terminal-content">
+                <h3>Rust WebAssembly Demo</h3>
+                <p>This page demonstrates Rust code running directly in your browser via WebAssembly.</p>
+                
+                <div class="wasm-demo-section">
+                    <h4>1. Simple Greeting</h4>
+                    <button class="wasm-button" data-wasm-function="greet" data-output-id="greet-output">Run Greeting</button>
+                    <div class="wasm-output" id="greet-output">Output will appear here...</div>
+                </div>
+                
+                <div class="wasm-demo-section">
+                    <h4>2. Fibonacci Calculator</h4>
+                    <div class="wasm-input-group">
+                        <label for="fib-input">Enter a number (0-40):</label>
+                        <input type="number" id="fib-input" min="0" max="40" value="10">
+                    </div>
+                    <button class="wasm-button" data-wasm-function="fibonacci" data-input-id="fib-input" data-output-id="fib-output">Calculate Fibonacci</button>
+                    <div class="wasm-output" id="fib-output">Output will appear here...</div>
+                </div>
+                
+                <div class="wasm-demo-section">
+                    <h4>3. Text Encryption</h4>
+                    <div class="wasm-input-group">
+                        <label for="encrypt-input">Enter text to encrypt:</label>
+                        <textarea id="encrypt-input" rows="3">Hello, WebAssembly!</textarea>
+                    </div>
+                    <button class="wasm-button" data-wasm-function="encrypt_text" data-input-id="encrypt-input" data-output-id="encrypt-output">Encrypt Text</button>
+                    <div class="wasm-output" id="encrypt-output">Output will appear here...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wasm-info">
+        <h3>About This Demo</h3>
+        <p>This page demonstrates how Rust code can be compiled to WebAssembly and run directly in your browser. The functions above are all written in Rust and compiled to WebAssembly, providing:</p>
+        <ul>
+            <li>Near-native performance</li>
+            <li>Strong type safety</li>
+            <li>Memory safety without garbage collection</li>
+            <li>Smaller payload sizes compared to JavaScript libraries</li>
+        </ul>
+        <p>The source code for these functions is available in the <code>wasm</code> directory of this project.</p>
+    </div>
+</section>
+{% endblock %}

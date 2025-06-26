@@ -1,0 +1,98 @@
+/* WebAssembly Demo Styles */
+.wasm-container {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.wasm-demo-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+}
+
+.wasm-demo-section h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-family: 'Source Code Pro', monospace;
+}
+
+.wasm-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 1rem 0;
+}
+
+.wasm-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.wasm-button:active {
+    transform: translateY(0);
+}
+
+.wasm-output {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    margin-top: 1rem;
+    min-height: 2rem;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.wasm-input-group {
+    margin: 1rem 0;
+}
+
+.wasm-input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.wasm-input-group input,
+.wasm-input-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.wasm-info {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.wasm-info h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.wasm-info ul {
+    margin-left: 1.5rem;
+}
+
+.wasm-info code {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Source Code Pro', monospace;
+}

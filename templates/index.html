@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    
+    <div class="features">
+        {% for feature in features %}
+        <div class="feature-card">
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="wasm-demo">
+        <h2>WebAssembly Demo</h2>
+        <div id="wasm-container">
+            <div class="controls">
+                <button id="wasm-button">Run Rust Function</button>
+            </div>
+            <div id="wasm-output"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
