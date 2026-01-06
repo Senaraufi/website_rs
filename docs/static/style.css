@@ -889,3 +889,71 @@ footer {
         text-align: center;
     }
 }
+
+/* TryHackMe Badge Styling */
+.thm-badge-container {
+    text-align: center;
+    margin: 3rem auto;
+    padding: 2rem;
+    max-width: 700px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.thm-badge-container:hover {
+    box-shadow: 0 6px 20px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.thm-badge-title {
+    color: var(--terminal-green);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(var(--terminal-green-rgb), 0.3);
+}
+
+.thm-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background: var(--terminal-bg);
+    border-radius: 6px;
+    border: 1px solid var(--terminal-green);
+    box-shadow: inset 0 0 20px rgba(var(--terminal-green-rgb), 0.1);
+}
+
+.thm-badge-iframe {
+    border: none;
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .thm-badge-container {
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+    
+    .thm-badge-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .thm-badge-wrapper {
+        padding: 0.5rem;
+    }
+    
+    .thm-badge-iframe {
+        height: 180px;
+    }
+}
