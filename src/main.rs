@@ -1,7 +1,7 @@
-use warp::{Filter, Rejection, Reply};
 use askama::Template;
 use serde::{Deserialize, Serialize};
 use std::convert::Infallible;
+use warp::{Filter, Rejection, Reply};
 
 // Define our templates
 #[derive(Template)]
@@ -39,7 +39,9 @@ async fn index_handler() -> Result<impl Reply, Rejection> {
         },
         Feature {
             title: "WebAssembly".to_string(),
-            description: "Client-side Rust code compiled to WebAssembly for near-native performance".to_string(),
+            description:
+                "Client-side Rust code compiled to WebAssembly for near-native performance"
+                    .to_string(),
         },
         Feature {
             title: "Askama Templates".to_string(),
@@ -90,37 +92,27 @@ async fn main() {
     });
 
     // Serve static files from the "./static" directory
-    let static_files = warp::path("static")
-        .and(warp::fs::dir("./static"));
-    
+    let static_files = warp::path("static").and(warp::fs::dir("./static"));
+
     // Serve WebAssembly files from the "./wasm/pkg" directory
     let wasm_files = warp::path("static")
         .and(warp::path("wasm"))
         .and(warp::fs::dir("./wasm/pkg"));
-    
+
     // Route for the index page using Askama template
-    let index = warp::path::end()
-        .and_then(index_handler);
-    
+    let index = warp::path::end().and_then(index_handler);
+
     // Route for the WebAssembly demo page
-    let wasm_demo = warp::path("wasm-demo")
-        .and_then(wasm_demo_handler);
-    
+    let wasm_demo = warp::path("wasm-demo").and_then(wasm_demo_handler);
+
     // Serve docs directory
-    let docs = warp::path("docs")
-        .and(warp::fs::dir("./docs"));
-    
+    let docs = warp::path("docs").and(warp::fs::dir("./docs"));
+
     // Combine all routes
-    let routes = index
-        .or(wasm_demo)
-        .or(static_files)
-        .or(wasm_files)
-        .or(docs);
-    
+    let routes = index.or(wasm_demo).or(static_files).or(wasm_files).or(docs);
+
     println!("Starting server at http://127.0.0.1:3033");
     println!("WebAssembly demo available at http://127.0.0.1:3033/wasm-demo");
-    
-    warp::serve(routes)
-        .run(([127, 0, 0, 1], 3033))
-        .await;
+
+    warp::serve(routes).run(([127, 0, 0, 1], 3033)).await;
 }

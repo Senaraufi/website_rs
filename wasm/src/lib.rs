@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 extern "C" {
     fn alert(s: &str);
-    
+
     #[wasm_bindgen(js_namespace = console)]
     fn log(s: &str);
 }
@@ -47,7 +47,7 @@ pub fn encrypt_text(text: &str) -> String {
 pub fn calculate_prime_factors(n: u32) -> String {
     let mut factors = Vec::new();
     let mut number = n;
-    
+
     let mut divisor = 2;
     while number > 1 {
         while number % divisor == 0 {
@@ -56,7 +56,7 @@ pub fn calculate_prime_factors(n: u32) -> String {
         }
         divisor += 1;
     }
-    
+
     if factors.is_empty() {
         format!("{} is prime", n)
     } else {
