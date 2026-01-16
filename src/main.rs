@@ -1,11 +1,11 @@
 use askama::Template;
 use serde::{Deserialize, Serialize};
-use std::convert::Infallible;
 use warp::{Filter, Rejection, Reply};
 
 // Define our templates
 #[derive(Template)]
 #[template(path = "index.html")]
+#[allow(dead_code)]
 struct IndexTemplate {
     title: String,
     description: String,
@@ -17,6 +17,7 @@ struct IndexTemplate {
 
 #[derive(Template)]
 #[template(path = "wasm_demo.html")]
+#[allow(dead_code)]
 struct WasmDemoTemplate {
     title: String,
     name: String,
