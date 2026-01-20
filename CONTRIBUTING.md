@@ -2,11 +2,11 @@
 
 First off, thank you for considering contributing to this project! 🎉
 
-## 🤝 Code of Conduct
+## Code of Conduct
 
 By participating in this project, you agree to maintain a respectful and inclusive environment for everyone.
 
-## 🚀 How Can I Contribute?
+## How Can I Contribute?
 
 ### Reporting Bugs
 
@@ -51,7 +51,7 @@ Enhancement suggestions are welcome! Please provide:
    - Link related issues
    - Request review from maintainers
 
-## 💻 Development Setup
+## Development Setup
 
 ### Prerequisites
 - Rust (latest stable version)
@@ -88,7 +88,7 @@ cargo fmt
 cargo clippy
 ```
 
-## 📝 Style Guidelines
+## Style Guidelines
 
 ### Git Commit Messages
 - Use present tense ("Add feature" not "Added feature")
@@ -135,29 +135,29 @@ Fixes #456
 - Document public APIs
 - Include examples for new features
 
-## 🔍 Code Review Process
+## Code Review Process
 
 1. Maintainers will review your PR within 3-5 days
 2. Address any requested changes
 3. Once approved, your PR will be merged
 4. Your contribution will be acknowledged in release notes
 
-## 🏆 Recognition
+## Recognition
 
 Contributors will be:
 - Listed in the project's README
 - Mentioned in release notes
 - Given credit in commit history
 
-## 📞 Getting Help
+## Getting Help
 
 - Open an issue with the `question` label
 - Email: sena.devx@gmail.com
 
-## 📜 License
+## License
 
 By contributing, you agree that your contributions will be licensed under the same license as the project.
 
 ---
 
-Thank you for contributing! 🚀
+Thank you for contributing!

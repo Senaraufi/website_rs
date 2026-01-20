@@ -1,14 +1,14 @@
 # Website_RS - Personal Portfolio Website
 
-![Rust CI](https://github.com/Senaraufi/WebsiteWithRs/workflows/Rust%20CI/badge.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/Senaraufi/WebsiteWithRs)
-![GitHub issues](https://img.shields.io/github/issues/Senaraufi/WebsiteWithRs)
-![GitHub stars](https://img.shields.io/github/stars/Senaraufi/WebsiteWithRs?style=social)
+![Rust CI](https://github.com/Senaraufi/website_rs/workflows/Rust%20CI/badge.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/Senaraufi/website_rs)
+![GitHub issues](https://img.shields.io/github/issues/Senaraufi/website_rs)
+![GitHub stars](https://img.shields.io/github/stars/Senaraufi/website_rs?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Welcome to the repository for my personal portfolio website! This project showcases my skills, experiences, and projects through a website built using Rust 🦀 and the Warp framework.
+Welcome to the repository for my personal portfolio website! This project showcases my skills, experiences, and projects through a website built using Rust and the Warp framework.
 
-🌐 **[Live Demo](https://senaraufi.github.io/website_rs/)** | 📧 **[Contact](mailto:sena.devx@gmail.com)**
+**[Live Demo](https://senaraufi.github.io/website_rs/)** | **[Contact](mailto:sena.devx@gmail.com)**
 
 ## Table of Contents 
 - [About](#about)
@@ -54,8 +54,8 @@ Ensure you have the following installed on your machine:
 ### Installation 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Senaraufi/WebsiteWithRs.git
-   cd WebsiteWithRs/website_rs
+   git clone https://github.com/Senaraufi/website_rs.git
+   cd website_rs
    ```
 
 2. Build the project:
@@ -90,7 +90,7 @@ cargo clippy
 cargo fmt -- --check && cargo clippy -- -D warnings && cargo test
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Netlify (Recommended)
 1. The `docs/` directory contains the static site
@@ -106,7 +106,7 @@ cargo fmt -- --check && cargo clippy -- -D warnings && cargo test
 2. Go to repository Settings → Pages
 3. Set source to `main` branch, `/docs` folder
 4. Save and wait for deployment
-5. Access at: `https://[username].github.io/WebsiteWithRs/`
+5. Access at: `https://[username].github.io/website_rs/`
 
 ### Manual Deployment
 1. Build the project:
@@ -121,7 +121,7 @@ cargo fmt -- --check && cargo clippy -- -D warnings && cargo test
 
 3. Configure reverse proxy (nginx/Apache) to point to `http://localhost:3033`
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
@@ -131,7 +131,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for de
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Port Already in Use
 If port 3033 is already in use, modify the port in `src/main.rs`:
@@ -156,11 +156,11 @@ cd wasm
 wasm-pack build --target web
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👤 Author
+## Author
 
 **Sena Raufi**
 - GitHub: [@Senaraufi](https://github.com/Senaraufi)
@@ -168,7 +168,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Email: sena.devx@gmail.com
 - Portfolio: [senaraufi.github.io/website_rs](https://senaraufi.github.io/website_rs/)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [Rust](https://www.rust-lang.org/)
 - Web framework: [Warp](https://github.com/seanmonstar/warp)
@@ -177,4 +177,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-⭐ Star this repository if you find it helpful!
+Star this repository if you find it helpful!
