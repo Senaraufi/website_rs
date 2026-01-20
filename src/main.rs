@@ -62,8 +62,10 @@ async fn index_handler() -> Result<impl Reply, Rejection> {
     match template.render() {
         Ok(html) => Ok(warp::reply::html(html)),
         Err(err) => {
-            eprintln!("Template error: {}", err);
-            Ok(warp::reply::html("<h1>Template Error</h1>".to_string()))
+            eprintln!("Error rendering index template: {}", err);
+            Ok(warp::reply::html(
+                "<h1>500 Internal Server Error</h1><p>Unable to render page. Please try again later.</p>".to_string()
+            ))
         }
     }
 }
@@ -79,8 +81,10 @@ async fn wasm_demo_handler() -> Result<impl Reply, Rejection> {
     match template.render() {
         Ok(html) => Ok(warp::reply::html(html)),
         Err(err) => {
-            eprintln!("Template error: {}", err);
-            Ok(warp::reply::html("<h1>Template Error</h1>".to_string()))
+            eprintln!("Error rendering WebAssembly demo template: {}", err);
+            Ok(warp::reply::html(
+                "<h1>500 Internal Server Error</h1><p>Unable to render WebAssembly demo. Please try again later.</p>".to_string()
+            ))
         }
     }
 }
@@ -88,9 +92,10 @@ async fn wasm_demo_handler() -> Result<impl Reply, Rejection> {
 #[tokio::main]
 async fn main() {
     // Create directory for WebAssembly files if it doesn't exist
-    std::fs::create_dir_all("./static/wasm").unwrap_or_else(|_| {
-        println!("WebAssembly directory already exists or couldn't be created");
-    });
+    if let Err(e) = std::fs::create_dir_all("./static/wasm") {
+        eprintln!("Warning: Failed to create WebAssembly directory: {}", e);
+        eprintln!("WebAssembly features may not work correctly");
+    }
 
     // Serve static files from the "./static" directory
     let static_files = warp::path("static").and(warp::fs::dir("./static"));
