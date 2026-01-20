@@ -1,10 +1,10 @@
 # Website_RS - Personal Portfolio Website
 
-![Rust CI](https://github.com/Senaraufi/website_rs/workflows/Rust%20CI/badge.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/Senaraufi/website_rs)
-![GitHub issues](https://img.shields.io/github/issues/Senaraufi/website_rs)
-![GitHub stars](https://img.shields.io/github/stars/Senaraufi/website_rs?style=social)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Rust CI](https://github.com/Senaraufi/website_rs/actions/workflows/rust.yml/badge.svg)](https://github.com/Senaraufi/website_rs/actions/workflows/rust.yml)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Senaraufi/website_rs)](https://github.com/Senaraufi/website_rs/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/Senaraufi/website_rs)](https://github.com/Senaraufi/website_rs/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Senaraufi/website_rs)](https://github.com/Senaraufi/website_rs/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Welcome to the repository for my personal portfolio website! This project showcases my skills, experiences, and projects through a website built using Rust and the Warp framework.
 
