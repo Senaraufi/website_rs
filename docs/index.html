@@ -26,6 +26,7 @@
             <div class="navbar-links" id="navbar-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -87,11 +88,11 @@
                 </div>
                 <div class="terminal-window about-text">
                     <div class="terminal-content">
-                        <p>I am a third year student majoring in digital forensics and cybersecurity. I am now undertaking a Bachelor of Degree in Cybersecurity at Technological University Dublin, TU863.</p>
+                        <p>I am a third-year student pursuing a B.Sc. Honours in Digital Forensics and Cyber Security at Technological University Dublin (TU863). My focus is on building production-grade security tools and competing in CTF challenges.</p>
                         
-                        <p>My background base in computer science, networking, and software development is strong. My education has provided me with the hands-on knowledge in network security, Java programming, web development, and interactive multimedia development with Unity.</p>
+                        <p>I have strong foundations in network security, digital forensics, penetration testing, and software engineering. I specialize in Rust development for security applications, with experience in threat detection, log analysis, and network forensics.</p>
                         
-                        <p>I use my free time to attend CTF events, work on open-source security tools, and research on new threats.</p>
+                        <p>Active member of TU Dublin Ethical Hacking Society. Regular competitor on ZeroDays and PicoCTF platforms. Recent achievements include 9th place in ZeroDays CTF 2025 (Colleges category) and 2nd place in TU Dublin's Naughty or Nice CTF.</p>
                     </div>
                 </div>
             </div>
@@ -99,71 +100,179 @@
         
         <section id="skills">
             <h2><span class="terminal-prompt">sena@cybersec:~$</span> ls -la skills/</h2>
-            <div class="skills-container">
-                <div class="skill-badge">Network Security</div>
-                <div class="skill-badge">LAN/WAN technologies</div>
-                <div class="skill-badge">Penetration Testing</div>
-                <div class="skill-badge">Algorithmic Problem Solving</div>
-                <div class="skill-badge">Software Engineering and Testing</div>
-                <div class="skill-badge">Java OOP</div>
-                <div class="skill-badge">Python</div>
-                <div class="skill-badge">Bash Scripting</div>
-                <div class="skill-badge">Cryptography</div>
-                <div class="skill-badge">Web Exploitation</div>
-                <div class="skill-badge">Web Development</div>
-                <div class="skill-badge">Kali Linux</div>
-                <div class="skill-badge">OSINT</div>
-                <div class="skill-badge">Reverse Engineering</div>
-                <div class="skill-badge">Rust</div>
-                <div class="skill-badge">Unity Game Development</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Languages</h3>
+                    <div class="skills-container">
+                        <div class="skill-badge">Rust</div>
+                        <div class="skill-badge">Python</div>
+                        <div class="skill-badge">Java</div>
+                        <div class="skill-badge">JavaScript</div>
+                        <div class="skill-badge">PHP</div>
+                        <div class="skill-badge">HTML/CSS</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Security Tools</h3>
+                    <div class="skills-container">
+                        <div class="skill-badge">Wireshark</div>
+                        <div class="skill-badge">FTK Imager</div>
+                        <div class="skill-badge">Binwalk</div>
+                        <div class="skill-badge">Burp Suite</div>
+                        <div class="skill-badge">CVSS 3.1</div>
+                        <div class="skill-badge">MITRE ATT&CK</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frameworks</h3>
+                    <div class="skills-container">
+                        <div class="skill-badge">React</div>
+                        <div class="skill-badge">Flask</div>
+                        <div class="skill-badge">Axum</div>
+                        <div class="skill-badge">Tokio</div>
+                        <div class="skill-badge">Unity</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Other Tools</h3>
+                    <div class="skills-container">
+                        <div class="skill-badge">Git</div>
+                        <div class="skill-badge">SQL</div>
+                        <div class="skill-badge">SQLx</div>
+                        <div class="skill-badge">Linux</div>
+                        <div class="skill-badge">Docker</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Focus Areas</h3>
+                    <div class="skills-container">
+                        <div class="skill-badge">Digital Forensics</div>
+                        <div class="skill-badge">Threat Detection</div>
+                        <div class="skill-badge">Penetration Testing</div>
+                        <div class="skill-badge">Network Analysis</div>
+                        <div class="skill-badge">CTF</div>
+                    </div>
+                </div>
             </div>
         </section>
         
+        <section id="achievements">
+            <h2><span class="terminal-prompt">sena@cybersec:~$</span> cat ./achievements/ctf.txt</h2>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>ZeroDays CTF 2025</h3>
+                    <p class="achievement-rank">9th place (Colleges category), 27th overall</p>
+                    <p class="achievement-desc">Out of 120 teams in Ireland's premier cybersecurity competition</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                    <h3>TU Dublin Naughty or Nice CTF</h3>
+                    <p class="achievement-rank">2nd place overall</p>
+                    <p class="achievement-desc">Internal university capture the flag competition</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-code"></i></div>
+                    <h3>HackIreland</h3>
+                    <p class="achievement-rank">Participant</p>
+                    <p class="achievement-desc">Ireland's inaugural 30-hour overnight hackathon at Dogpatch Labs</p>
+                </div>
+            </div>
+        </section>
+
         <section id="projects">
-            <h2><span class="terminal-prompt">user@cybersec:~$</span> find ./projects -type f -name "*.md" | sort</h2>
+            <h2><span class="terminal-prompt">sena@cybersec:~$</span> find ./projects -type f -name "*.md" | sort</h2>
             <div class="projects">
-                <a href="https://github.com/Senaraufi/EmergencyResponseSystem" class="project-card-link">
+                <a href="https://github.com/Senaraufi/Security-Log-Analyser" class="project-card-link">
                     <div class="project-card">
-                        <h3 class="project-title">Emergency Response System</h3>
-                        <p class="project-description">A web app developed during Hack Ireland hackathon, a response system based on online consulting. Based on the severity an ambulance gets automatically called.</p>
+                        <h3 class="project-title">Security Log Analyser</h3>
+                        <p class="project-description">Production-grade log analysis platform built entirely in Rust using Cargo workspace architecture (4 independent crates). Implements CVSS 3.1 scoring, MITRE ATT&CK framework mapping, and multi-provider LLM integration (Groq, OpenAI, Gemini). Detects 10+ threat types including SQL injection, XSS, malware, and port scanning.</p>
                         <div class="project-tools">
-                            <span class="project-tool">React</span>
-                            <span class="project-tool">Flasc</span>
-                            <span class="project-tool">Automation</span>
+                            <span class="project-tool">Rust</span>
+                            <span class="project-tool">Axum</span>
+                            <span class="project-tool">Tokio</span>
+                            <span class="project-tool">SQLx</span>
+                            <span class="project-tool">CVSS 3.1</span>
+                            <span class="project-tool">MITRE ATT&CK</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/Senaraufi/pcap-anomaly-detector" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">PCAP Anomaly Detector</h3>
+                        <p class="project-description">Network packet capture analysis tool for detecting anomalous traffic patterns and potential intrusions. Parses and inspects PCAP files — directly applicable to network forensics and incident response workflows.</p>
+                        <div class="project-tools">
+                            <span class="project-tool">Rust</span>
+                            <span class="project-tool">PCAP Parsing</span>
+                            <span class="project-tool">Network Forensics</span>
+                            <span class="project-tool">Wireshark</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/Senaraufi/Web-Vulnerability-Scanner" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">Web Vulnerability Scanner</h3>
+                        <p class="project-description">Automated tool for identifying common web vulnerabilities including XSS, SQL injection, and misconfigured endpoints. Designed for use in penetration testing and security auditing workflows.</p>
+                        <div class="project-tools">
                             <span class="project-tool">Python</span>
+                            <span class="project-tool">Penetration Testing</span>
+                            <span class="project-tool">XSS Detection</span>
+                            <span class="project-tool">SQL Injection</span>
                         </div>
                         <div class="github-link">
                             View on GitHub <i class="fab fa-github"></i>
                         </div>
                     </div>
                 </a>
-                
-                <a href="https://github.com/Senaraufi/TalkTempo" class="project-card-link">
+
+                <a href="https://github.com/Senaraufi/crypto-tool" class="project-card-link">
                     <div class="project-card">
-                        <h3 class="project-title">TalkTempo</h3>
-                        <p class="project-description">Website developed for Software Engineering and Testing. A website inspired by Letterboxd but for music.</p>
+                        <h3 class="project-title">Crypto Tool</h3>
+                        <p class="project-description">Cryptographic utility tool implementing core encryption and hashing algorithms for security analysis and CTF challenges.</p>
                         <div class="project-tools">
-                            <span class="project-tool">Java OOP</span>
-                            <span class="project-tool">PHP</span>
-                            <span class="project-tool">HTML</span>
-                            <span class="project-tool">CSS</span>
-                            <span class="project-tool">PHP Unit</span>
+                            <span class="project-tool">Cryptography</span>
+                            <span class="project-tool">Encryption</span>
+                            <span class="project-tool">Hashing</span>
                         </div>
                         <div class="github-link">
                             View on GitHub <i class="fab fa-github"></i>
                         </div>
                     </div>
                 </a>
-                
-                <a href="https://github.com/Senaraufi/EveryLastBite" class="project-card-link">
+
+                <a href="https://github.com/Senaraufi/Team24" class="project-card-link">
                     <div class="project-card">
-                        <h3 class="project-title">Every Last Bite</h3>
-                        <p class="project-description">Web App developed during the CS++ Workday hackathon.Helps customers find recipes that they can make based on their ingredients avaialble and their dietary requirements. </p>
+                        <h3 class="project-title">Emergency Response System — HackIreland</h3>
+                        <p class="project-description">Web app for online medical consulting with automated ambulance dispatch built during Ireland's first 30-hour hackathon. Developed over 30 hours of continuous coding at Dogpatch Labs.</p>
                         <div class="project-tools">
                             <span class="project-tool">React</span>
                             <span class="project-tool">Flask</span>
                             <span class="project-tool">Python</span>
-                            <span class="project-tool">JavaScript</span>
+                            <span class="project-tool">Automation APIs</span>
+                        </div>
+                        <div class="github-link">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/Senaraufi/SofwareEngineering-WDSS_Project" class="project-card-link">
+                    <div class="project-card">
+                        <h3 class="project-title">TalkTempo — Music Social Platform</h3>
+                        <p class="project-description">Music-focused social platform with comprehensive unit testing implementation. Developed as part of Software Engineering and Testing module alongside Web Development Server Side module.</p>
+                        <div class="project-tools">
+                            <span class="project-tool">Java OOP</span>
+                            <span class="project-tool">PHP</span>
+                            <span class="project-tool">PHPUnit</span>
+                            <span class="project-tool">HTML/CSS</span>
                         </div>
                         <div class="github-link">
                             View on GitHub <i class="fab fa-github"></i>
