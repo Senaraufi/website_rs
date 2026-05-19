@@ -108,15 +108,16 @@ class Terminal {
     showWelcome() {
         const welcome = `
 <span class="ascii-art">
- ____                    ____              __ _ 
-/ ___|  ___ _ __   __ _ |  _ \\ __ _ _   _ / _(_)
-\\___ \\ / _ \\ '_ \\ / _\` || |_) / _\` | | | | |_| |
- ___) |  __/ | | | (_| ||  _ < (_| | |_| |  _| |
-|____/ \\___|_| |_|\\__,_||_| \\_\\__,_|\\__,_|_| |_|
+╔═══════════════════════════════════════════════╗
+║                                               ║
+║         SENA RAUFI - PORTFOLIO v1.0          ║
+║    Digital Forensics & Cybersecurity         ║
+║                                               ║
+╚═══════════════════════════════════════════════╝
 </span>
 
 <span class="welcome-text">Welcome to my interactive portfolio terminal!</span>
-<span class="info">Digital Forensics & Cybersecurity Student | TU Dublin</span>
+<span class="info">TU Dublin | B.Sc. Cyber Security (Year 3)</span>
 
 Type <span class="highlight">help</span> to see available commands.
 Type <span class="highlight">about</span> to learn more about me.
