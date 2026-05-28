@@ -73,27 +73,73 @@
             margin-top: 30px;
         }
 
-        .cursor-line {
+        /* Interactive Terminal Styles */
+        #terminal-output {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .terminal-history {
+            margin-bottom: 15px;
+        }
+
+        .command-echo {
+            color: #00ff00;
+            margin-bottom: 5px;
+        }
+
+        .command-output {
+            color: rgba(0, 255, 0, 0.8);
+            white-space: pre-wrap;
+            margin-left: 0;
+            line-height: 1.6;
+        }
+
+        .terminal-input-line {
             display: flex;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .prompt {
             color: #00ff00;
             margin-right: 10px;
+            font-size: 1.1rem;
         }
 
-        .cursor {
-            width: 10px;
-            height: 20px;
-            background-color: #00ff00;
-            animation: blink 1s infinite;
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1.1rem;
+            outline: none;
+            caret-color: #00ff00;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+        .terminal-input::selection {
+            background: rgba(0, 255, 0, 0.3);
+        }
+
+        /* Scrollbar for terminal output */
+        #terminal-output::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #terminal-output::-webkit-scrollbar-track {
+            background: rgba(0, 255, 0, 0.1);
+        }
+
+        #terminal-output::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        #terminal-output::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 0, 0.5);
         }
 
         .scroll-indicator {
@@ -154,6 +200,19 @@
             .scroll-indicator {
                 bottom: 15px;
             }
+
+            .terminal-input {
+                font-size: 0.95rem;
+            }
+
+            .prompt {
+                font-size: 0.95rem;
+            }
+
+            #terminal-output {
+                max-height: 150px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -183,9 +242,11 @@
                 Type 'help' to see available commands
             </div>
 
-            <div class="cursor-line">
+            <div id="terminal-output"></div>
+
+            <div class="terminal-input-line">
                 <span class="prompt">$</span>
-                <span class="cursor"></span>
+                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
             </div>
         </div>
 
@@ -519,6 +580,181 @@
         </div>
     </footer>
     <script>
+        // Interactive Terminal
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalOutput = document.getElementById('terminal-output');
+        let commandHistory = [];
+        let historyIndex = -1;
+        let currentSection = 'home';
+
+        const commands = {
+            help: () => {
+                return `Available commands:
+  help              - Show this help message
+  ls                - List available sections
+  cd <section>      - Navigate to a section
+  cat <file>        - Display file contents
+  pwd               - Print current section
+  whoami            - Display user info
+  clear             - Clear terminal output
+  
+Examples:
+  cd about          - Go to about section
+  cat skills.txt    - Display skills
+  ls                - List all sections`;
+            },
+            
+            ls: () => {
+                return `Available sections:
+  about/
+  skills/
+  projects/
+  achievements/
+  certifications/
+  contact/`;
+            },
+            
+            pwd: () => {
+                return `/${currentSection}`;
+            },
+            
+            whoami: () => {
+                return `sena@portfolio - Digital Forensics & Cybersecurity Student`;
+            },
+            
+            clear: () => {
+                terminalOutput.innerHTML = '';
+                return '';
+            },
+            
+            cd: (args) => {
+                const section = args[0]?.toLowerCase();
+                const validSections = ['about', 'skills', 'projects', 'achievements', 'certifications', 'contact', 'home'];
+                
+                if (!section) {
+                    currentSection = 'home';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return 'Navigated to home';
+                }
+                
+                if (validSections.includes(section)) {
+                    currentSection = section;
+                    if (section === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const element = document.getElementById(section);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                    return `Navigated to ${section}`;
+                } else {
+                    return `cd: ${section}: No such directory`;
+                }
+            },
+            
+            cat: (args) => {
+                const file = args[0]?.toLowerCase();
+                
+                const files = {
+                    'about.txt': 'I am a third-year student pursuing a B.Sc. Honours in Digital Forensics and Cyber Security at Technological University Dublin (TU863). My focus is on building production-grade security tools and competing in CTF challenges.',
+                    'skills.txt': `Languages: Rust, Python, Java, JavaScript, PHP, HTML/CSS
+Security Tools: Wireshark, FTK Imager, Binwalk, Burp Suite, CVSS 3.1, MITRE ATT&CK
+Frameworks: React, Flask, Axum, Tokio, Unity
+Other: Git, SQL, SQLx, Linux, Docker
+Focus: Digital Forensics, Threat Detection, Penetration Testing, Network Analysis, CTF`,
+                    'contact.txt': `GitHub: https://github.com/Senaraufi
+LinkedIn: https://www.linkedin.com/in/sena-raufi-610187293/
+ZeroDays: https://ctf.cybersecuritychallenge.ie/user
+Email: sena.devx@gmail.com`
+                };
+                
+                if (!file) {
+                    return 'cat: missing file operand';
+                }
+                
+                if (files[file]) {
+                    return files[file];
+                } else {
+                    return `cat: ${file}: No such file or directory`;
+                }
+            }
+        };
+
+        function executeCommand(input) {
+            const parts = input.trim().split(' ');
+            const cmd = parts[0].toLowerCase();
+            const args = parts.slice(1);
+
+            if (commands[cmd]) {
+                return commands[cmd](args);
+            } else if (input.trim() === '') {
+                return '';
+            } else {
+                return `Command not found: ${cmd}. Type 'help' for available commands.`;
+            }
+        }
+
+        function addOutput(command, output) {
+            if (output) {
+                const outputLine = document.createElement('div');
+                outputLine.className = 'terminal-history';
+                outputLine.innerHTML = `<div class="command-echo"><span class="prompt">$</span> ${command}</div><div class="command-output">${output}</div>`;
+                terminalOutput.appendChild(outputLine);
+            } else if (command) {
+                const outputLine = document.createElement('div');
+                outputLine.className = 'terminal-history';
+                outputLine.innerHTML = `<div class="command-echo"><span class="prompt">$</span> ${command}</div>`;
+                terminalOutput.appendChild(outputLine);
+            }
+            
+            // Scroll to show latest output
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const input = terminalInput.value;
+                const output = executeCommand(input);
+                
+                if (input.trim() !== 'clear') {
+                    addOutput(input, output);
+                }
+                
+                commandHistory.push(input);
+                historyIndex = commandHistory.length;
+                terminalInput.value = '';
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    terminalInput.value = commandHistory[historyIndex];
+                }
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    terminalInput.value = commandHistory[historyIndex];
+                } else {
+                    historyIndex = commandHistory.length;
+                    terminalInput.value = '';
+                }
+            } else if (e.key === 'Tab') {
+                e.preventDefault();
+                const input = terminalInput.value.toLowerCase();
+                const cmdList = Object.keys(commands);
+                const matches = cmdList.filter(cmd => cmd.startsWith(input));
+                if (matches.length === 1) {
+                    terminalInput.value = matches[0];
+                }
+            }
+        });
+
+        // Keep focus on terminal input when clicking anywhere in landing terminal
+        document.getElementById('landing-terminal').addEventListener('click', () => {
+            terminalInput.focus();
+        });
+
         // Mobile navbar toggle
         const navbarToggle = document.getElementById('navbar-toggle');
         const navbarLinks = document.getElementById('navbar-links');
