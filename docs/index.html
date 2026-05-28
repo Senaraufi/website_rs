@@ -73,6 +73,27 @@
             margin-top: 30px;
         }
 
+        .interactive-badge {
+            display: inline-block;
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #00ff00;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+            }
+        }
+
         /* Interactive Terminal Styles */
         #terminal-output {
             margin-top: 20px;
@@ -122,6 +143,11 @@
 
         .terminal-input::selection {
             background: rgba(0, 255, 0, 0.3);
+        }
+
+        .terminal-input::placeholder {
+            color: rgba(0, 255, 0, 0.4);
+            font-style: italic;
         }
 
         /* Scrollbar for terminal output */
@@ -239,14 +265,14 @@
             </div>
 
             <div class="help-text">
-                Type 'help' to see available commands
+                <span class="interactive-badge">⚡ INTERACTIVE</span> Type 'help' to see available commands
             </div>
 
             <div id="terminal-output"></div>
 
             <div class="terminal-input-line">
                 <span class="prompt">$</span>
-                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus placeholder="Try typing 'help' or 'ls'...">
             </div>
         </div>
 
